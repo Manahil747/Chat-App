@@ -1,0 +1,97 @@
+# 💬 ChatApp Backend (Socket.IO + MongoDB)
+
+This is the **backend-only** implementation of a real-time chat application using **Node.js**, **Express**, **Socket.IO**, and **MongoDB**.  
+It allows clients to connect via WebSocket, send/receive messages, and persist them in a MongoDB database.
+
+> **Note**: This project is for backend demonstration only — no frontend is included.
+
+
+## Features
+
+- Real-time bi-directional messaging using **Socket.IO**
+- Message persistence with **MongoDB** using **Mongoose**
+- Simple architecture with WebSocket-based communication
+- WebSocket client testing compatible (Postman/WebSocket Tester)
+
+
+## Project Structure
+
+chatApp/
+│
+├── index.js # Main backend server with Socket.IO and Express
+
+├── chatModel.js # Mongoose schema/model for chat messages
+
+├── .env # Environment variables (PORT, MONGO_URI)
+
+├── package.json # Dependencies and scripts
+
+└── README.md # Project documentation
+
+##  Tech Stack:
+
+- Node.js
+- Express
+- Socket.IO
+- MongoDB
+- Mongoose
+- dotenv
+
+##  Developed By:
+
+Manahil Altaf
+
+
+##  Installation
+
+1. **Clone the repository:**
+   
+   git clone https://github.com/yourusername/chatApp.git
+   cd chatApp
+
+2. **Install dependencies:**
+
+     npm install
+
+3. **Set environment variables**
+
+Create a .env file in the root directory and add:
+
+PORT=3000
+MONGO_URI=your_mongodb_connection_string
+
+4. **Run the server:**
+
+     node index.js
+
+
+**How to Test with Postman:** 
+
+1. Open Postman.
+
+2. Go to New > Socket.IO request.
+
+3. In the import dropdown, select Socket.IO.
+
+4. Use the following connection URL:
+
+                  http://localhost:3000
+
+5. You can emit or listen to **events** like:
+
+- join_room
+- left_room
+- send_message
+- receive_message
+- typing
+- stop_typing
+
+
+**Features:**
+
+1. Real-time user connection using Socket.IO.
+2. MongoDB integration for message persistence.
+3. Clean separation of concerns (chatModel.js for DB schema).
+4. Can be tested using Postman without any frontend.
+                  
+

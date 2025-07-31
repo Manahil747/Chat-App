@@ -81,16 +81,18 @@ io.on("connection",(socket=>{
             message:msg,
             timeStamp:new Date(),
             room:roomName
-        })
+        });
         console.log(messageData);
-      await messageData.save();
+     let respone= await messageData.save();
+     console.log(respone);
+     
       
       io.to(roomName).emit('receive_message',{userId:socket.id, message:msg});
     }
     catch(err){
         console.error(err);
     }
-})
+});
      socket.on("disconnect",()=>{
      console.log("User disconnected: ",socket.id);
      io.emit("userdisconnected",{userId:socket.id});
